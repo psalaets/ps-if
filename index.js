@@ -1,4 +1,4 @@
-;(function iife() {
+;(function iife(angular) {
   var m = angular.module('ps.warm-toggle', []);
 
   m.directive('psWarmToggle', function psWarmToggle() {
