@@ -20,7 +20,7 @@ angular.module('app', ['ps.if']);
 
 ```html
 <div ps-if="show" ps-cool-down-millis="5000">
-  <span>child</span>
+  <big-expensive-directive/>
 </div>
 ```
 
