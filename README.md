@@ -34,7 +34,7 @@ Angular expression (evaluated once). Once children have been hidden for this man
 
 ## Install
 
-
+`bower install ps-if --save`
 
 ## License
 
