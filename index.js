@@ -60,4 +60,11 @@
       '</div>'
     }
   });
-})(angular);
+})(function findAngular(global) {
+  if (typeof exports === 'object' && typeof module === 'object') {
+    // value returned by require('angular') wasn't useful until angular 1.3.14
+    return global.angular || require('angular');
+  } else {
+    return global.angular;
+  }
+}(this));
