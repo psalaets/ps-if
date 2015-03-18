@@ -6,7 +6,7 @@ Combines ngIf and ngShow using a timeout to switch between them.
 
 - Starts off like ngIf
 - When condition changes it acts lke ngShow
-- After being hidden for some timeout, becomes an ngIf again
+- Once condition has been false for some timeout, becomes an ngIf again
 
 ## Usage
 
