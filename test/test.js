@@ -7,7 +7,7 @@ describe('psWarmToggle directive', function () {
     $compile = _$compile_;
 
     el = angular.element(
-      '<div warm-toggle="shouldShow()" cool-down-millis="coolDown()">' +
+      '<div ps-warm-toggle="shouldShow()" ps-cool-down-millis="coolDown()">' +
         '<span>child</span>' +
       '</div>');
 

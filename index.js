@@ -1,25 +1,25 @@
 ;(function iife() {
   var m = angular.module('ps.warm-toggle', []);
 
-  m.directive('warmToggle', function psWarmToggle() {
+  m.directive('psWarmToggle', function psWarmToggle() {
     return {
       restrict: 'A',
       transclude: true,
       scope: {
         // expression controling when children are shown
-        warmToggle: '&',
+        psWarmToggle: '&',
         // expression that evals to how long children can be hidden before
         // considered cool and destroyed
-        coolDownMillis: '&'
+        psCoolDownMillis: '&'
       },
       controller: ['$scope', '$timeout', function($scope, $timeout) {
         // how long children can stay hidden until they're destroyed
-        var coolDownMillis = Number($scope.coolDownMillis());
+        var coolDownMillis = Number($scope.psCoolDownMillis());
 
         // when set that means cool down timer is running
         var coolDownPromise;
 
-        $scope.$watch('warmToggle()', function(value) {
+        $scope.$watch('psWarmToggle()', function(value) {
           $scope.show = value;
 
           if (value) {

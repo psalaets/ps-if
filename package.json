@@ -1,5 +1,5 @@
 {
-  "name": "warm-toggle",
+  "name": "ps-warm-toggle",
   "version": "1.0.0",
   "description": "Combines ngShow and ngIf using a timeout to control which is active",
   "main": "index.js",
