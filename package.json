@@ -1,7 +1,7 @@
 {
   "name": "warm-toggle",
   "version": "1.0.0",
-  "description": "",
+  "description": "Combines ngShow and ngIf using a timeout to control which is active",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -10,7 +10,7 @@
     "test": "karma start",
     "test-watch": "karma start --auto-watch true --single-run false"
   },
-  "author": "",
+  "author": "Paul Salaets <psalaets@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "jasmine-core": "^2.2.0",
