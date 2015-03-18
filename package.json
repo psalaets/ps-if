@@ -7,7 +7,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "karma start"
+    "test": "karma start",
+    "test-watch": "karma start --auto-watch true --single-run false"
   },
   "author": "",
   "license": "MIT",
