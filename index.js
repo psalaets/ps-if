@@ -1,13 +1,13 @@
 ;(function iife(angular) {
-  var m = angular.module('ps.warm-toggle', []);
+  var m = angular.module('ps.if', []);
 
-  m.directive('psWarmToggle', function psWarmToggle() {
+  m.directive('psIf', function psIf() {
     return {
       restrict: 'A',
       transclude: true,
       scope: {
         // expression controling when children are shown
-        psWarmToggle: '&',
+        psIf: '&',
         // expression that evals to how long children can be hidden before
         // considered cool and destroyed
         psCoolDownMillis: '&'
@@ -19,7 +19,7 @@
         // when set that means cool down timer is running
         var coolDownPromise;
 
-        $scope.$watch('psWarmToggle()', function(value) {
+        $scope.$watch('psIf()', function(value) {
           $scope.show = value;
 
           if (value) {

@@ -1,13 +1,13 @@
 describe('psWarmToggle directive', function () {
   var el, scope, $timeout, $compile;
 
-  beforeEach(module('ps.warm-toggle'));
+  beforeEach(module('ps.if'));
   beforeEach(inject(function ($rootScope, _$compile_, _$timeout_) {
     $timeout = _$timeout_;
     $compile = _$compile_;
 
     el = angular.element(
-      '<div ps-warm-toggle="shouldShow()" ps-cool-down-millis="coolDown()">' +
+      '<div ps-if="shouldShow()" ps-cool-down-millis="coolDown()">' +
         '<span>child</span>' +
       '</div>');
 
