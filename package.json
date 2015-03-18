@@ -1,6 +1,6 @@
 {
   "name": "ps-if",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Angular directive that combines ngIf and ngShow using a timeout to switch between them",
   "main": "index.js",
   "directories": {

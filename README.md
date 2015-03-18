@@ -12,6 +12,8 @@ Angular directive that combines ngIf and ngShow using a timeout to switch betwee
 
 ### 1. Depend on `ps.if`
 
+browserify users: first do `require('ps-if')`
+
 ```js
 angular.module('app', ['ps.if']);
 ```
@@ -33,6 +35,10 @@ Angular expression controlling if children are shown or not.
 Angular expression (evaluated once). Once children have been hidden for this many milliseconds, directive acts like ngIf.
 
 ## Install
+
+`npm install ps-if --save`
+
+or
 
 `bower install ps-if --save`
 
