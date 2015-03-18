@@ -6,6 +6,21 @@
   "directories": {
     "test": "test"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/psalaets/ps-if.git"
+  },
+  "homepage": "https://github.com/psalaets/ps-if",
+  "bugs": {
+    "url": "https://github.com/psalaets/ps-if/issues"
+  },
+  "keywords": [
+    "angular",
+    "ngif",
+    "if",
+    "ngshow",
+    "show"
+  ],
   "scripts": {
     "test": "karma start",
     "test-watch": "karma start --auto-watch true --single-run false"
