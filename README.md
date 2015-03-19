@@ -1,6 +1,6 @@
 # ps-if
 
-Angular directive that combines ngIf and ngShow using a timeout to switch between them.
+Angular directive that is a hybrid of ngIf and ngShow.
 
 ## What this does
 
