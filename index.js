@@ -1,7 +1,9 @@
 ;(function iife(angular) {
   var m = angular.module('ps.if', []);
 
-  m.directive('psIf', function psIf() {
+  m.directive('psIf', function psIf($timeout) {
+    var FOREVER = 'forever';
+
     return {
       restrict: 'A',
       transclude: true,
@@ -12,9 +14,14 @@
         // considered cool and destroyed
         psCoolDownMillis: '&'
       },
-      controller: ['$scope', '$timeout', function($scope, $timeout) {
+      link: function($scope, element, attrs) {
         // how long children can stay hidden until they're destroyed
-        var coolDownMillis = Number($scope.psCoolDownMillis());
+        // defaults to forever
+        var coolDownMillis = FOREVER;
+
+        if (attrs.psCoolDownMillis) {
+          coolDownMillis = Number($scope.psCoolDownMillis());
+        }
 
         // when set that means cool down timer is running
         var coolDownPromise;
@@ -34,7 +41,9 @@
         $scope.$on('$destroy', cancelCoolDownTimer);
 
         function startCoolDownTimer(time) {
-          coolDownPromise = $timeout(cooled, time);
+          if (time !== FOREVER) {
+            coolDownPromise = $timeout(cooled, time);
+          }
         }
 
         function warmed() {
@@ -51,7 +60,7 @@
             coolDownPromise = null;
           }
         }
-      }],
+      },
       template:
       '<div ng-show="show">' +
         '<div ng-if="useNgShow || show">' +

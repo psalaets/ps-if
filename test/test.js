@@ -6,11 +6,6 @@ describe('psWarmToggle directive', function () {
     $timeout = _$timeout_;
     $compile = _$compile_;
 
-    el = angular.element(
-      '<div ps-if="shouldShow()" ps-cool-down-millis="coolDown()">' +
-        '<span>child</span>' +
-      '</div>');
-
     scope = $rootScope.$new();
 
     scope.shouldShow = function() {
@@ -26,6 +21,12 @@ describe('psWarmToggle directive', function () {
     describe('show condition starts off as ' + showCondition, function() {
       beforeEach(function() {
         scope.show = showCondition;
+
+        el = angular.element(
+          '<div ps-if="shouldShow()" ps-cool-down-millis="coolDown()">' +
+            '<span>child</span>' +
+          '</div>');
+
         $compile(el)(scope);
       });
 
@@ -89,6 +90,28 @@ describe('psWarmToggle directive', function () {
 
         expect(el.find('span').length).toBe(1);
       });
+    });
+  });
+
+  describe('no cool down millis specified', function() {
+    beforeEach(function() {
+      scope.show = false;
+
+      el = angular.element(
+        '<div ps-if="shouldShow()">' +
+          '<span>child</span>' +
+        '</div>');
+
+      $compile(el)(scope);
+    });
+
+    it('has children after: on, off, wait', function() {
+      scope.$apply('show = true');
+      scope.$apply('show = false');
+      $timeout.flush(10000);
+      $timeout.verifyNoPendingTasks();
+
+      expect(el.find('span').length).toBe(1);
     });
   });
 });
