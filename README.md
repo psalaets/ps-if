@@ -6,7 +6,7 @@ Angular directive that is a hybrid of ngIf and ngShow.
 
 - Starts off like ngIf
 - When condition changes it acts lke ngShow
-- Once condition has been false for some timeout, becomes an ngIf again
+- If timeout is specified, becomes an ngIf again once condition has been false for long enough.
 
 ## Usage
 
@@ -32,7 +32,7 @@ Angular expression controlling if children are shown or not.
 
 #### ps-cool-down-millis
 
-Angular expression (evaluated once). Once children have been hidden for this many milliseconds, directive acts like ngIf.
+Optional Angular expression (evaluated once). Once children have been hidden for this many milliseconds, directive acts like ngIf. If omitted, directive will act like ngShow forever.
 
 ## Install
 
