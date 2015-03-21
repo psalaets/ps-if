@@ -5,7 +5,7 @@ Angular directive that is a hybrid of ngIf and ngShow.
 ## What this does
 
 - Starts off like ngIf
-- When condition changes it acts lke ngShow
+- When condition changes it becomes an ngShow
 - If timeout is specified, becomes an ngIf again once condition has been false for long enough.
 
 ## Usage
