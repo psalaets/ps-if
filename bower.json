@@ -1,6 +1,6 @@
 {
   "name": "ps-if",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Angular directive that is a hybrid of ngIf and ngShow",
   "authors": [
     "Paul Salaets <psalaets@gmail.com>"
