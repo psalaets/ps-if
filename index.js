@@ -14,20 +14,20 @@
         // considered cool and destroyed
         psCoolDownMillis: '&'
       },
-      link: function($scope, element, attrs) {
+      link: function(scope, element, attrs) {
         // how long children can stay hidden until they're destroyed
         // defaults to forever
         var coolDownMillis = FOREVER;
 
         if (attrs.psCoolDownMillis) {
-          coolDownMillis = Number($scope.psCoolDownMillis());
+          coolDownMillis = Number(scope.psCoolDownMillis());
         }
 
         // when set that means cool down timer is running
         var coolDownPromise;
 
-        $scope.$watch('psIf()', function(value) {
-          $scope.show = value;
+        scope.$watch('psIf()', function(value) {
+          scope.show = value;
 
           if (value) {
             warmed();
@@ -38,7 +38,7 @@
         });
 
         // clean up timer when this directive's scope goes away
-        $scope.$on('$destroy', cancelCoolDownTimer);
+        scope.$on('$destroy', cancelCoolDownTimer);
 
         function startCoolDownTimer(time) {
           if (time !== FOREVER) {
@@ -47,11 +47,11 @@
         }
 
         function warmed() {
-          $scope.useNgShow = true;
+          scope.useNgShow = true;
         }
 
         function cooled() {
-          $scope.useNgShow = false;
+          scope.useNgShow = false;
         }
 
         function cancelCoolDownTimer() {
