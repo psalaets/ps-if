@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+  <meta charset="utf-8">
+  <title>ps-if example</title>
+</head>
+<body>
+
+  <ol>
+    <li>Open dev console</li>
+    <li>Toggle show to true: expensive directive is run</li>
+    <li>Toggle show to false and wait 2 seconds: expensive directive is destroyed</li>
+    <li>Rapidly click toggle and note that expensive directive is not being destroyed when show is false</li>
+  </ol>
+
+  <div ng-controller="MainController">
+    show: {{show}}<br>
+    <button ng-click="toggle()">Toggle</button>
+
+    <div ps-if="show" ps-cool-down-millis="2000">
+      <expensive-directive></expensive-directive>
+    </div>
+  </div>
+
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/ps-if/index.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -34,6 +34,13 @@ Angular expression controlling if children are shown or not.
 
 Optional Angular expression (evaluated once). Once children have been hidden for this many milliseconds, directive acts like ngIf. If omitted, directive will act like ngShow forever.
 
+## Example
+
+1. `git clone https://github.com/psalaets/ps-if.git`
+2. `cd ps-if/example`
+3. `bower install`
+4. Open `index.html` in a browser
+
 ## Install
 
 `npm install ps-if --save`
