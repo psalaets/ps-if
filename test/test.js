@@ -1,7 +1,21 @@
-describe('psWarmToggle directive', function () {
+describe('psIf directive', function () {
   var el, scope, $timeout, $compile;
 
-  beforeEach(module('ps.if'));
+  if (typeof exports == 'object') { // commonjs environment
+    window.angular = require('angular');
+    require('angular-mocks');
+
+    var angularModuleName = require('..');
+
+    it('exposes the Angular module name through module.exports', function() {
+      expect(angularModuleName).toBe('ps.if');
+    });
+
+    beforeEach(angular.mock.module(angularModuleName));
+  } else {
+    beforeEach(module('ps.if'));
+  }
+
   beforeEach(inject(function ($rootScope, _$compile_, _$timeout_) {
     $timeout = _$timeout_;
     $compile = _$compile_;

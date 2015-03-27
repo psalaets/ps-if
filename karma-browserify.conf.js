@@ -6,5 +6,19 @@ var baseConfig = require('./karma-base-config')();
 module.exports = function(config) {
   baseConfig.logLevel = config.LOG_INFO;
 
+  baseConfig.frameworks = ['browserify', 'jasmine'];
+
+  baseConfig.files = [
+    'test/*.js'
+  ];
+
+  baseConfig.preprocessors = {
+    'test/*.js': 'browserify'
+  };
+
+  baseConfig.browserify = {
+    debug: true
+  };
+
   config.set(baseConfig);
 };
