@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file.
 ### Changed
 
 - Switch to inline array annotation style so this module can be minified without needing to `ng-annotate` first
-- `require('ps-if')` now returns the Angular module name so you can do
+- `require('ps-if')` now returns the Angular module name so commonjs users can do
 ```js
 angular.module('app', [require('ps-if')])
 ```
