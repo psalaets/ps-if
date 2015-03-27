@@ -1,7 +1,7 @@
 ;(function iife(angular) {
   var m = angular.module('ps.if', []);
 
-  m.directive('psIf', function psIf($timeout) {
+  m.directive('psIf', ['$timeout', function psIf($timeout) {
     var FOREVER = 'forever';
 
     return {
@@ -68,7 +68,7 @@
         '</div>' +
       '</div>'
     }
-  });
+  }]);
 })(function findAngular(global) {
   if (typeof exports === 'object' && typeof module === 'object') {
     // value returned by require('angular') wasn't useful until angular 1.3.14
