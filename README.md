@@ -12,9 +12,11 @@ Angular directive that is a hybrid of ngIf and ngShow.
 
 ### 1. Depend on `ps.if`
 
-browserify users: first do `require('ps-if')`
-
 ```js
+// browserify/commonjs users:
+angular.module('app', [require('ps-if')]);
+
+// everyone else
 angular.module('app', ['ps.if']);
 ```
 
