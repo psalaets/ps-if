@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.0] - 2015-03-27
+### Changed
+
+- Switch to inline annotated style so directive code can be minified without needing to ng-annotate first
+- `require('ps-if')` now returns the Angular module name so you can do `angular.module('app', [require('ps-if')])`
+
 ## [1.2.0] - 2015-03-21
 ### Changed
 
