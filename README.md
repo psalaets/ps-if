@@ -13,7 +13,7 @@ Angular directive that is a hybrid of ngIf and ngShow.
 ### 1. Depend on `ps.if`
 
 ```js
-// browserify/commonjs users:
+// commonjs users:
 angular.module('app', [require('ps-if')]);
 
 // everyone else
