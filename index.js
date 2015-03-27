@@ -1,7 +1,33 @@
-;(function iife(angular) {
-  var m = angular.module('ps.if', []);
+// factory is function(angular, optionalCommonjsModule)
+;(function defineModule(global, factory) {
+  factory(findAngular(global), findCommonjsModule());
 
-  m.directive('psIf', ['$timeout', function psIf($timeout) {
+  function findAngular(global) {
+    var commonjs = findCommonjsModule();
+    if (commonjs) {
+      // value returned by require('angular') wasn't useful until angular 1.3.14
+      return global.angular || require('angular');
+    } else {
+      return global.angular;
+    }
+  }
+
+  // if this seems like commonjs env, return the 'module' global
+  function findCommonjsModule() {
+    if (typeof exports === 'object' && typeof module === 'object') {
+      return module;
+    }
+  }
+})(this, function createAngularModule(angular, commonjsModule) {
+  var angularModuleName = 'ps.if';
+
+  // setup so require('ps-if') returns Angular module name when in commonjs environment
+  if (commonjsModule) {
+    commonjsModule.exports = angularModuleName;
+  }
+
+  var angularModule = angular.module(angularModuleName, []);
+  angularModule.directive('psIf', ['$timeout', function psIf($timeout) {
     var FOREVER = 'forever';
 
     return {
@@ -69,11 +95,4 @@
       '</div>'
     }
   }]);
-})(function findAngular(global) {
-  if (typeof exports === 'object' && typeof module === 'object') {
-    // value returned by require('angular') wasn't useful until angular 1.3.14
-    return global.angular || require('angular');
-  } else {
-    return global.angular;
-  }
-}(this));
+});
